@@ -1,0 +1,165 @@
+/* CSV Editor Styles */
+.csv-editor-container {
+  padding: 80px 5% 2rem;
+  min-height: 100vh;
+  background: var(--light-gray);
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.file-info h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#lastSaved {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* CSV Table */
+.csv-table-container {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+#csvTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Roboto", sans-serif;
+}
+
+#csvTable th,
+#csvTable td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+  position: relative;
+}
+
+#csvTable th {
+  background: var(--light-gray);
+  font-weight: 500;
+}
+
+#csvTable td input {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#csvTable td input:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: -2px;
+}
+
+/* Delete buttons */
+.delete-row,
+.delete-column {
+  position: absolute;
+  display: none;
+  background: var(--danger-color);
+  color: white;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.delete-row {
+  top: 50%;
+  left: -25px;
+  transform: translateY(-50%);
+}
+
+.delete-column {
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Only show delete-row on first cell hover, and delete-column on header cell hover */
+tr td:first-child:hover .delete-row {
+  display: flex;
+}
+th:hover .delete-column {
+  display: flex;
+}
+
+/* History Modal */
+.history-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 1rem 0;
+}
+
+.history-item {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.history-info h4 {
+  margin: 0;
+}
+
+.history-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .editor-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .editor-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .delete-row,
+  .delete-column {
+    display: flex;
+  }
+}
