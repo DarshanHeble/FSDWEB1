@@ -14,11 +14,11 @@
   --white: #ffffff;
   --transition: all 0.3s ease;
 }
-
-body {
+w body {
   font-family: "Georgia", serif;
   line-height: 1.6;
   color: var(--dark-gray);
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -168,8 +168,10 @@ h6 {
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
   background: var(--dark-gray);
   color: var(--white);
 }
@@ -199,4 +201,11 @@ footer {
   .feature-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.icon-btn {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+  font-size: larger;
 }
