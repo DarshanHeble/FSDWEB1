@@ -78,12 +78,14 @@ function loadFiles() {
       }
       return `
           <div class="file-card file-card-clickable" data-file-id="${file.id}">
-            <button class="delete-file-btn" title="Delete" onclick="event.stopPropagation();deleteFile('${file.id}')">
-              <i class="fas fa-trash"></i>
+            <button class="delete-file-btn" title="Delete" onclick="event.stopPropagation();deleteFile('${
+              file.id
+            }')">
+              <i class="fa fa-trash"></i>
             </button>
             ${preview}
             <div class="file-header">
-              <i class="file-icon fas ${
+              <i class="file-icon fa ${
                 file.type === "document" ? "fa-file-alt" : "fa-file-csv"
               }"></i>
               <div class="file-info">
@@ -96,9 +98,9 @@ function loadFiles() {
     .join("");
 
   // Add click event to each file-card (except delete button)
-  document.querySelectorAll('.file-card-clickable').forEach(card => {
-    card.addEventListener('click', function() {
-      const fileId = this.getAttribute('data-file-id');
+  document.querySelectorAll(".file-card-clickable").forEach((card) => {
+    card.addEventListener("click", function () {
+      const fileId = this.getAttribute("data-file-id");
       openFile(fileId);
     });
   });

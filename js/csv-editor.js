@@ -86,7 +86,7 @@ function renderTable(rows) {
       if (rowIndex === 0) {
         const deleteColBtn = document.createElement("button");
         deleteColBtn.className = "delete-column";
-        deleteColBtn.innerHTML = '<i class="fas fa-times"></i>';
+        deleteColBtn.innerHTML = '<i class="fa fa-times"></i>';
         deleteColBtn.onclick = () => deleteColumn(colIndex);
         td.appendChild(deleteColBtn);
       }
@@ -95,7 +95,7 @@ function renderTable(rows) {
       if (colIndex === 0 && rowIndex !== 0) {
         const deleteRowBtn = document.createElement("button");
         deleteRowBtn.className = "delete-row";
-        deleteRowBtn.innerHTML = '<i class="fas fa-times"></i>';
+        deleteRowBtn.innerHTML = '<i class="fa fa-times"></i>';
         deleteRowBtn.onclick = () => deleteRow(rowIndex);
         td.appendChild(deleteRowBtn);
       }
@@ -140,7 +140,7 @@ function addRow() {
     if (i === 0) {
       const deleteRowBtn = document.createElement("button");
       deleteRowBtn.className = "delete-row";
-      deleteRowBtn.innerHTML = '<i class="fas fa-times"></i>';
+      deleteRowBtn.innerHTML = '<i class="fa fa-times"></i>';
       deleteRowBtn.onclick = () => deleteRow(table.rows.length);
       td.appendChild(deleteRowBtn);
     }
@@ -165,7 +165,7 @@ function addColumn() {
     if (rowIndex === 0) {
       const deleteColBtn = document.createElement("button");
       deleteColBtn.className = "delete-column";
-      deleteColBtn.innerHTML = '<i class="fas fa-times"></i>';
+      deleteColBtn.innerHTML = '<i class="fa fa-times"></i>';
       deleteColBtn.onclick = () => deleteColumn(tr.cells.length - 1);
       cell.appendChild(deleteColBtn);
     }
