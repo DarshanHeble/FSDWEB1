@@ -80,7 +80,7 @@ h6 {
 
 .btn-primary {
   background: var(--primary-color);
-  color: var(--white);
+  color: var(--white) !important;
   border: none;
 }
 
@@ -90,6 +90,7 @@ h6 {
 
 .btn-outline {
   border: 2px solid var(--primary-color);
+  background-color: transparent;
   color: var(--primary-color);
 }
 
